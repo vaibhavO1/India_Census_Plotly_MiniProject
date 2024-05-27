@@ -13,8 +13,8 @@ list_of_states.insert(0,'Entire India')
 st.sidebar.title("India's Map")
 
 selected_state = st.sidebar.selectbox('Select a state',list_of_states)
-primary = st.sidebar.selectbox('Select Primary Parameter',sorted(df.columns[5:]))
-secondary = st.sidebar.selectbox('Select Secondary Parameter',sorted(df.columns[5:]))
+primary = st.sidebar.selectbox('Select Primary Parameter',sorted(df.columns[7:]))
+secondary = st.sidebar.selectbox('Select Secondary Parameter',sorted(df.columns[7:]))
 
 plot = st.sidebar.button('Plot Graph')
 
@@ -22,7 +22,7 @@ if plot:
 
     st.text('Size represent primary parameter')
     st.text('Color represents secondary parameter')
-    if selected_state == 'Overall India':
+    if selected_state == 'Entire India':
         # plot for India
         fig = px.scatter_mapbox(df, lat="Latitude", lon="Longitude", size=primary, color=secondary, zoom=4,size_max=35,
                                 mapbox_style="carto-positron",width=1200,height=700,hover_name='District')

@@ -21,6 +21,6 @@ final_df['Others_Religions'] = final_df['Others_Religions'] + final_df['Religion
 # print(final_df['Others_Religions'])
 final_df['sex_ratio'] = round((final_df['Female']/final_df['Male'])*1000)
 final_df['literacy_rate'] = round((final_df['Literate']/final_df['Population'])*100)
-final_df.drop(columns=['Male','Female','Literate','Religion_Not_Stated'],inplace=True)
+final_df.drop(columns=['Literate','Religion_Not_Stated'],inplace=True)
 # print(final_df.shape)
 final_df.to_csv('india.csv')
